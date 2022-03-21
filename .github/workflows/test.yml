@@ -15,7 +15,7 @@ jobs:
     - name: Run tests
       run: |
         set -o pipefail
-        pytest | tee pytest-coverage.txt
+        pytest --cov=main | tee pytest-coverage.txt
     # Report the test coverage on a PR.
     - name: Report test coverage
       if: ${{ always() }}
