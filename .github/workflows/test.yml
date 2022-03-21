@@ -17,3 +17,7 @@ jobs:
       run: |
         set -o pipefail
         pytest | tee pytest-coverage.txt
+    # Report the test coverage on a PR.
+    - name: Report test coverage
+      if: ${{ always() }}
+      uses: coroo/pytest-coverage-commentator@v1.0.2
