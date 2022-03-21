@@ -6,4 +6,4 @@ def test_encode():
     assert encode('hey') == 'khB'
 
 def test_decode():
-    assert decode('khB') = 'hey'
+    assert decode('khB') == 'hey'

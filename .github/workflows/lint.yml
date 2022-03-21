@@ -4,7 +4,7 @@ name: commit
 on: push
 
 jobs:
-  example:
+  lint:
     runs-on: ubuntu-latest
     name: Executes pylint
     steps:
