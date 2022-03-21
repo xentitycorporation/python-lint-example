@@ -6,24 +6,40 @@ Example module for linting and testing
 
 import string;
 
-shift = 3
-choice = input("would you like to encode or decode?")
-word = input("Please enter text")
-letters = string.ascii_letters + string.punctuation + string.digits
-encoded = ""
-if choice == "encode":
+def encode(word):
+    encoded = ""
     for letter in word:
         if letter == " ":
             encoded = encoded + " "
         else:
             x = letters.index(letter) + shift
             encoded = encoded + letters[x]
-if choice == "decode":
+    return encoded
+
+def decode(word):
+    decoded = ""
     for letter in word:
         if letter == " ":
-            encoded = encoded + " "
+            decoded = decoded + " "
         else:
             x = letters.index(letter) - shift
-            encoded = encoded + letters[x]
+            decoded = decoded + letters[x]
+    return decoded
 
-print(encoded)
+shift = 3
+letters = string.ascii_letters + string.punctuation + string.digits
+
+def main():
+    choice = input("would you like to encode or decode?")
+    word = input("Please enter text")
+    output = ""
+    if choice == "encode":
+        output = encode(word)
+    if choice == "decode":
+        output = decode(word)
+    
+    print(output)
+
+if __name__ == "__main__":
+    main()
+
