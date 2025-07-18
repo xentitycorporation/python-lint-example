@@ -4,7 +4,8 @@
 Example module for linting and testing
 """
 
-import string;
+import string
+
 
 def encode(word):
     encoded = ""
@@ -16,6 +17,7 @@ def encode(word):
             encoded = encoded + letters[x]
     return encoded
 
+
 def decode(word):
     decoded = ""
     for letter in word:
@@ -26,8 +28,10 @@ def decode(word):
             decoded = decoded + letters[x]
     return decoded
 
+
 shift = 3
 letters = string.ascii_letters + string.punctuation + string.digits
+
 
 def main():
     choice = input("would you like to encode or decode?")
@@ -37,9 +41,9 @@ def main():
         output = encode(word)
     if choice == "decode":
         output = decode(word)
-    
+
     print(output)
+
 
 if __name__ == "__main__":
     main()
-
