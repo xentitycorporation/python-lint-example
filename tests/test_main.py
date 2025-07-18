@@ -2,6 +2,7 @@
 
 import sys
 import os
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from unittest.mock import patch
@@ -9,8 +10,10 @@ from io import StringIO
 
 from main import decode, encode, main
 
+
 def test_encode():
-    assert encode('hey') == 'khB'
+    assert encode("hey") == "khB"
+
 
 def test_decode():
     assert decode('khB') == 'hey'
