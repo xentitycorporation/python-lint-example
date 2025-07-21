@@ -1,11 +1,6 @@
 # python-lint-example
 An example of a simple python script with linting and testing setup.
 
-## Functionality
-This has 2 functions: one for decoding and another for encoding.
-This simply makes sure you can encode and decode words.
-Try it yourself by running `python main.py` in the terminal.
-
 ## Linting
 Linting is setup automatically on [github actions via pylint](.github/workflows/lint.yml).
 Our configuration file was taken from [google best practices](https://google.github.io/styleguide/pyguide.html).
