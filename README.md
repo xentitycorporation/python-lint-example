@@ -2,10 +2,11 @@
 An example of a simple Python script with comprehensive linting and testing setup, demonstrating best practices for Python development workflows.
 
 ## Functionality
-This project implements a Caesar cipher with a fixed shift of 3 characters, providing:
+This project implements a configurable Caesar cipher, providing:
 - **Encoding**: Converts plain text to encoded text
 - **Decoding**: Converts encoded text back to plain text  
 - **Character support**: Works with letters, punctuation, and digits (preserves spaces)
+- **Configurable shift**: Set via `SHIFT` environment variable or `.env` file (default: 3)
 - **Interactive mode**: Run `python main.py` for an interactive encoding/decoding session
 
 ### Example Usage
@@ -13,7 +14,7 @@ This project implements a Caesar cipher with a fixed shift of 3 characters, prov
 $ python main.py
 would you like to encode or decode? encode
 Please enter text: hello world
-khoor zruog
+lipps ${vph  # With SHIFT=4 from .env file
 ```
 
 ## Development Setup

@@ -4,7 +4,16 @@
 Example module for linting and testing
 """
 
+import os
 import string
+
+# Load environment variables from .env file if available
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # python-dotenv not available, continue without it
+    pass
 
 
 def encode(word):
@@ -29,7 +38,8 @@ def decode(word):
     return decoded
 
 
-shift = 3
+# Configuration from environment variables
+shift = int(os.getenv('SHIFT', '3'))  # Default to 3 if not set
 letters = string.ascii_letters + string.punctuation + string.digits
 
 

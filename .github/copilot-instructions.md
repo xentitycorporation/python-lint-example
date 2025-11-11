@@ -1,29 +1,32 @@
 # Copilot Instructions for Python Lint Example
 
 ## Project Overview
-This is a simple Caesar cipher implementation demonstrating Python linting and testing best practices. The core functionality provides encoding/decoding with a fixed shift of 3 characters.
+This is a simple Caesar cipher implementation demonstrating Python linting and testing best practices. The core functionality provides configurable encoding/decoding with environment variable-based shift configuration.
 
 ## Key Architecture
 - **main.py**: Single-file application with `encode()`, `decode()`, and interactive `main()` functions
 - **Character set**: Uses `string.ascii_letters + string.punctuation + string.digits` (not just alphabet)
-- **Global variables**: `shift = 3` and `letters` are module-level constants used by encode/decode functions
+- **Configuration**: `shift` loaded from `SHIFT` environment variable (default: 3), `.env` file support via python-dotenv
+- **Global variables**: `shift` and `letters` are module-level constants initialized from environment
 - **Space handling**: Spaces are preserved as-is during encoding/decoding operations
 
 ## Testing Patterns
 - Tests use `sys.path.insert(0, ...)` pattern to import from parent directory without packages
 - Mock `builtins.input` and `sys.stdout` for testing interactive `main()` function
+- Mock `os.environ` and use `importlib.reload()` to test different shift values
 - Example test structure:
   ```python
   with patch('builtins.input', side_effect=['encode', 'hello']):
       with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
           main()
-          assert mock_stdout.getvalue().strip() == 'khoor'
+          assert mock_stdout.getvalue().strip() == 'lipps'  # shift=4 from .env
   ```
 
 ## Development Workflow
-- **Install deps**: `pip install -r dev-requirements.txt`
+- **Install deps**: `pip install -r dev-requirements.txt` (includes python-dotenv)
+- **Configuration**: Copy `.env.example` to `.env` and modify `SHIFT` value as needed
 - **Run tests**: `python -m pytest tests/ --cov=main`
-- **Run manually**: `python main.py` for interactive mode
+- **Run manually**: `python main.py` for interactive mode (uses .env configuration)
 - **Coverage**: Tests require coverage reporting; PR comments show coverage via GitHub Actions
 
 ## Linting Configuration
