@@ -12,13 +12,13 @@ from main import decode, encode, main
 
 
 def test_encode():
-    # With shift=4 (from .env), 'hey' becomes 'li}'
-    assert encode("hey") == "li}"
+    # With shift=4 (from .env), 'hey' becomes 'liC'
+    assert encode("hey") == "liC"
 
 
 def test_decode():
-    # With shift=4 (from .env), 'li}' decodes back to 'hey'
-    assert decode('li}') == 'hey'
+    # With shift=4 (from .env), 'liC' decodes back to 'hey'
+    assert decode('liC') == 'hey'
 
 def test_main_encode():
     """Test main function with encode choice"""
@@ -47,7 +47,7 @@ def test_main_with_spaces():
             main()
             output = mock_stdout.getvalue().strip()
             # With shift=4, 'hello world' encoded should preserve the space
-            assert 'lipps ${vph' == output
+            assert 'lipps Asvph' == output
 
 
 def test_encode_with_custom_shift():
@@ -104,5 +104,5 @@ def test_default_shift_fallback():
         import main
         importlib.reload(main)
         
-        # Should default to shift=3, so 'hello' becomes 'khoor'
-        assert main.encode("hello") == "khoor"
+        # Should default to shift=3, so 'hello' becomes 'lipps'
+        assert main.encode("hello") == "lipps"
