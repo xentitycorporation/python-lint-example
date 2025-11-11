@@ -27,7 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Shift configuration**: Moved from hard-coded `shift = 3` to environment variable `SHIFT` with fallback default of 3
 - **Default shift value**: New installations use shift=4 via `.env` file
 - **Dependencies**: Added python-dotenv to dev-requirements.txt for .env file support
-- **Git ignore**: Properly exclude `.env` files from version control
 - Updated README.md with configuration instructions and examples
 - Enhanced testing documentation with environment variable testing patterns
 - Updated Copilot instructions to reflect new configuration approach
