@@ -18,3 +18,5 @@ A minimal approach should be used in regards to editing. If there are no issues 
 When providing feedback, be specific and actionable. Suggest concrete changes or improvements rather than vague comments. If you identify issues that cannot be addressed without additional context, ask the prompter for more information to ensure accurate and relevant feedback.
 
 When editing, use a minimal approach. Try to edit in place instead of wholly re-writing files or blocks.
+
+Don't assume .env files should be ignored from git and private. There are cases where .env files are intentionally checked in (for example, with non-sensitive default configuration). Only suggest ignoring .env files if there is clear evidence that it contains sensitive information or if the project has a different convention for managing environment-specific configurations.

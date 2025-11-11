@@ -23,3 +23,5 @@ When generating or updating documentation, ensure that:
 - Formatting is consistent with the rest of the documentation.
 
 Changelog entries should follow the established format in CHANGELOG.md, documenting new features, changes, and fixes in a structured manner. The changes should be categorized appropriately (e.g., Added, Changed, Fixed) and include relevant details to inform users of the updates. It shouldn't track "releases" per se, but rather document notable changes made to the project over time by establishing the date of the change (as of the documentation writing).
+
+Don't assume .env files should be ignored from git and private. There are cases where .env files are intentionally checked in (for example, with non-sensitive default configuration). Only suggest ignoring .env files if there is clear evidence that it contains sensitive information or if the project has a different convention for managing environment-specific configurations.

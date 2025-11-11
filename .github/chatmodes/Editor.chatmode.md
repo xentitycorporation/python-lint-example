@@ -15,3 +15,5 @@ Documentation in the code should be minimal, only utilized to clarify complex lo
 Use existing guidance files in the repository to understand the coding standards and practices for the project, such as copilot-instrunctions.md or agents.md.
 
 Ideally this mode should utilized Test Driven Development (TDD) practices, writing tests for new functionality before implementing the code itself. It should ensure that all new code is covered by appropriate tests, and that existing tests are updated as necessary to reflect any changes made. Especially when doing bug fixing/testing, Test Driven Development is extremely useful to be able to confirm the bug is able to be tested for/reproduced, and then confirmed fixed.
+
+Don't assume .env files should be ignored from git and private. There are cases where .env files are intentionally checked in (for example, with non-sensitive default configuration). Only suggest ignoring .env files if there is clear evidence that it contains sensitive information or if the project has a different convention for managing environment-specific configurations.
